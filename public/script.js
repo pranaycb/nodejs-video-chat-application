@@ -25,6 +25,21 @@ var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
   port: "443",
+  config: {
+    iceServers: [
+      {
+        urls: ["stun:stun.speakez.chat"]
+      },
+      {
+        username: "sez",
+        credential: "Qbb8ccQxBrV5VL8R",
+        urls: [
+         "turn:turn.speakez.chat:3478?transport=udp",
+         "turn:turn.speakez.chat:3478?transport=tcp"
+        ]
+       }
+    ]
+  }
 });
 
 let myVideoStream;
