@@ -140,7 +140,7 @@ inviteButton.addEventListener("click", (e) => {
   navigator.share({
     title: 'Meet Me Live',
     text: 'You are invited to join in a meeting in Meet Me Live.',
-    url: url ? url : window.location.href,
+    url: window.location.href,
   })
   .then(() => console.log('Successful share'))
   .catch((error) => console.log('Error sharing', error));
