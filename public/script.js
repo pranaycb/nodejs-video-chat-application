@@ -137,10 +137,13 @@ stopVideo.addEventListener("click", () => {
 });
 
 inviteButton.addEventListener("click", (e) => {
-  prompt(
-    "Copy this link and send it to people you want to meet with",
-    window.location.href
-  );
+  navigator.share({
+    title: 'Meet Me Live',
+    text: 'You are invited to join in a meeting in Meet Me Live.',
+    url: url ? url : window.location.href,
+  })
+  .then(() => console.log('Successful share'))
+  .catch((error) => console.log('Error sharing', error));
 });
 
 socket.on("createMessage", (message, userName) => {
